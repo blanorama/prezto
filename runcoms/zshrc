@@ -97,6 +97,7 @@ alias c=cd
 [ $commands[docker] ] && alias d=docker
 [ $commands[docker-compose] ] && alias dc=docker-compose
 alias df='df -H'
+alias dg='BROWSER=links ddgr --colors Cjdgxy'
 [ $commands[docker-machine] ] && alias dm=docker-machine
 alias du='setopt CSH_NULL_GLOB && du -sch .[!.]* * |sort -h && unsetopt CSH_NULL_GLOB'
 
@@ -327,7 +328,9 @@ compdef wat=which
 [ $commands[exa] ] && x () {
   [ $1 ] && target=$1 || target=.
   print "\e[1mcount: $(find $target -maxdepth 1 | wc -l )\e[0m" && exa -lah --group-directories-first --git $target
-} && alias xx='x ..'
+} && alias x.='x ..'
+
+[ $commands[broot] ] && alias xx='broot -g'
 
 ### Options
 ###########
