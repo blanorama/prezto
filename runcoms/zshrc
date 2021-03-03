@@ -91,7 +91,6 @@ if [[ $commands[brew] ]]; then
 fi
 
 alias c=cd
-[ $commands[covid] ] && alias co=covid
 [ $commands[pbcopy] ] && alias cpy=pbcopy
 
 [ $commands[docker] ] && alias d=docker
@@ -288,7 +287,6 @@ fi
 u () {
   brew upgrade
   echo '\e[1mBrew upgrades finished 🍻'
-  [ $commands[npm] ] && echo '🍻 Upgrading npm:\e[0m' && npm -g upgrade && echo '\e[1mnpm upgrades finished 🍻'
   echo '🍻 Updating Prezto:\e[0m' && zprezto-update
 }
 
